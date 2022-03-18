@@ -1,0 +1,97 @@
+body { 
+	background-color: rgb(230, 209, 190);
+	text-shadow: 10%;
+}
+ul { 
+	list-style-type: none;
+	width: 100%;
+}
+li { 
+	display: inline-block;
+	margin: 10px;
+}
+li a:hover { 
+	color: rgb(230, 149, 92);
+}
+li a { 
+	text-decoration: none;
+	text-align: center;
+	padding: 12px;	
+	vertical-align: middle;
+	font-size: 16px;
+}
+nav { 
+	margin: 0px;
+	background-color: black;
+	height: 60px;
+	width: 100%;
+}
+a { 
+	color: rgb(194, 149, 92);
+}
+hr { 
+	border-color: rgb(185, 122, 87);
+}
+h1 { 
+	text-align: center;
+}
+h1,h2,h3 { 
+	font-weight: normal;
+}
+#tartalom { 
+	text-align: center;
+	position: static;
+	line-height: 120%;
+}
+#tartalom img { 
+	width: 50%;
+}
+.tabla { 
+	margin: auto;
+	border: 1px solid black;
+	width: 75%;
+}
+tr { 
+	border: 1px solid black;
+	text-align: justify;
+}
+th { 
+	background-color: rgb(167, 115, 63);
+	color: rgb(236, 190, 110);
+}
+tr:nth-of-type(even) { 
+	background-color: rgb(214, 184, 158); 
+}
+caption { 
+	margin: 10px;
+}
+#hirfolyam { 
+	margin: auto;
+}
+#hirfolyam td { 
+	padding: 10px;
+}
+#hirfolyam img { 
+	width: 100%;
+	border: 1px solid black;
+	border-radius: 25px;
+}
+#video { 
+	text-align: center;
+}
+nav img { 
+	float: left;
+	width: 7%;
+}
+#fontos::first-letter { 
+	font-size: 120%; 
+}
+footer { 
+	background-color: black;
+	height: 100%;
+	width: 100%;
+}
+footer a { 
+	vertical-align: middle;
+	text-align: center;
+}
