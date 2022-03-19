@@ -2,7 +2,15 @@ body {
 	background-color: rgb(230, 209, 190);
 	max-width: 100%;
 }
-ul { 
+
+
+header{
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+ul {
 	list-style-type: none;
 	width: 100%;
 }
@@ -71,8 +79,12 @@ caption {
 	width: 100%;
 	border: 1px solid black;
 	border-radius: 25px;
-	box-shadow:0 2px 15px black;
-	
+	box-shadow:0 2px 15px black;}
+
+#hirfolyam img:hover {
+	cursor: pointer;
+	box-shadow: 0 2px 15px grey;
+	transition: all 200ms ease-in-out;
 }
 #video { 
 	text-align: center;
@@ -110,3 +122,4 @@ h2::selection {
 	background-color: black;
 	color: white;
 }
+
