@@ -11,10 +11,12 @@ header{
 
 ul {
 	list-style-type: none;
-	width: 100%;
+	max-width: 100%;
+	height: auto;
 }
 li { 
 	display: inline-block;
+	overflow: hidden;
 	margin: 10px;
 }
 li a:hover { 
@@ -30,8 +32,8 @@ li a {
 }
 nav {
 	background-color: black;
-	height: 55px;
-	width: 100%;
+	height: auto;
+	max-width: 100%;
 	border-top: 15px solid black;
 	border-left: 15px solid black;
 	border-right: 15px solid black;
@@ -48,7 +50,8 @@ h1 {
 h1,h2,h3 { 
 	font-weight: normal;
 }
-#tartalom { 
+#tartalom {
+	position: static;
 	text-align: center;
 }
 .rangsor { 
@@ -111,6 +114,9 @@ footer {
 	height: 100%;
 	width: 100%;
 }
+footer ul { 
+	text-align: center;
+}
 .kepkeret { 
 	box-shadow:0 2px 15px black;
 	width: 50%;
@@ -127,6 +133,12 @@ h2::selection {
 	background-color: black;
 	color: white;
 }
+#copy { 
+	font-size: 10px;
+	color: rgb(194, 149, 92);
+	text-align: center;
+	
+}
  input[type="reset"], input[type="submit"] { 
 	background-color: rgb(135,50,41);
 	color: rgb(226,176,103);
@@ -135,4 +147,11 @@ h2::selection {
 	height: auto;
 	font-weight: bold;
 }
+@media print {  
+        p { font-size: 12pt; }
+        video, audio, nav, footer { display: none; }   
+        h1, h2, h3 { page-break-after: avoid; } 
+		
+      }
 
+      @page { margin: 0.5cm; }
