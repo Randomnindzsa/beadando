@@ -27,12 +27,15 @@ li a {
 	padding: 12px;	
 	vertical-align: middle;
 	font-size: 16px;
+	
 }
-nav { 
-	margin: 0px;
+nav {
 	background-color: black;
-	height: 60px;
+	height: 55px;
 	width: 100%;
+	border-top: 15px solid black;
+	border-left: 15px solid black;
+	border-right: 15px solid black;
 }
 a { 
 	color: rgb(194, 149, 92);
@@ -48,7 +51,6 @@ h1,h2,h3 {
 }
 #tartalom { 
 	text-align: center;
-	line-height: 120%;
 }
 .rangsor { 
 	margin: auto;
@@ -71,6 +73,7 @@ caption {
 }
 #hirfolyam { 
 	margin: auto;
+	animation: beuszas 1s linear 0s 1 normal forwards;
 }
 #hirfolyam td { 
 	padding: 10px;
@@ -89,10 +92,16 @@ caption {
 #video { 
 	text-align: center;
 }
+video { 
+	position: static;
+	width: 920px;
+}
 nav img { 
 	float: left;
 	width: 7%;
+	transform: translate(0,-20px);
 }
+
 #fontos::first-letter { 
 	font-size: 120%; 
 }
@@ -101,13 +110,8 @@ footer {
 	height: 100%;
 	width: 100%;
 }
-footer a { 
-	vertical-align: middle;
-	text-align: center;
-}
 .kepkeret { 
 	box-shadow:0 2px 15px black;
-	position: relative;
 	width: 50%;
 }
 p::selection { 
@@ -122,4 +126,11 @@ h2::selection {
 	background-color: black;
 	color: white;
 }
-
+ input[type="reset"], input[type="submit"] { 
+	background-color: rgb(135,50,41);
+	color: rgb(226,176,103);
+	border: 3px solid rgb(226,176,103);
+	width: 10%;
+	height: 10%;
+	font-weight: bold;
+}
