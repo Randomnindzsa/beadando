@@ -3,7 +3,6 @@ body {
 	max-width: 100%;
 }
 
-
 header{
 	position: fixed;
 	top: 0;
@@ -95,6 +94,8 @@ caption {
 video { 
 	position: static;
 	width: 920px;
+	height: auto;
+	 max-width: 100%;
 }
 nav img { 
 	float: left;
