@@ -131,7 +131,8 @@ h2::selection {
 	background-color: rgb(135,50,41);
 	color: rgb(226,176,103);
 	border: 3px solid rgb(226,176,103);
-	width: 10%;
-	height: 10%;
+	max-width: 100%;
+	height: auto;
 	font-weight: bold;
 }
+
