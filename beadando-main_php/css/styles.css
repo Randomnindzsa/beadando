@@ -1,0 +1,164 @@
+body { 
+	background-color: rgb(230, 209, 190);
+	max-width: 100%;
+}
+
+header{
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+ul {
+	list-style-type: none;
+	max-width: 100%;
+	height: auto;
+}
+li { 
+	display: inline-block;
+	overflow: hidden;
+	margin: 10px;
+}
+li a:hover { 
+	color: rgb(230, 149, 92);
+}
+li a { 
+	text-decoration: none;
+	text-align: center;
+	padding: 12px;	
+	vertical-align: middle;
+	font-size: 16px;
+	
+}
+nav {
+	background-color: black;
+	height: auto;
+	max-width: 100%;
+	border-top: 15px solid black;
+	border-left: 15px solid black;
+	border-right: 15px solid black;
+}
+a { 
+	color: rgb(194, 149, 92);
+}
+hr { 
+	border-color: rgb(185, 122, 87);
+}
+h1 { 
+	text-align: center;
+}
+h1,h2,h3 { 
+	font-weight: normal;
+}
+#tartalom {
+	position: static;
+	text-align: center;
+}
+.rangsor { 
+	margin: auto;
+	border: 1px solid black;
+	width: 75%;
+}
+.tablaadatok { 
+	margin: auto;
+	border: 1px solid black;
+}
+tr { 
+	border: 1px solid black;
+	text-align: justify;
+}
+th { 
+	background-color: rgb(167, 115, 63);
+	color: rgb(236, 190, 110);
+}
+.rangsor tr:nth-of-type(even) { 
+	background-color: rgb(214, 184, 158); 
+}
+.adatok tr:nth-of-type(even) { 
+	background-color: rgb(214, 184, 158); 
+}
+caption { 
+	margin: 10px;
+}
+#hirfolyam { 
+	margin: auto;
+	animation: beuszas 1s linear 0s 1 normal forwards;
+}
+#hirfolyam td { 
+	padding: 10px;
+}
+#hirfolyam img { 
+	width: 100%;
+	border: 1px solid black;
+	border-radius: 25px;
+	box-shadow:0 2px 15px black;}
+
+#hirfolyam img:hover {
+	cursor: pointer;
+	box-shadow: 0 2px 15px grey;
+	transition: all 200ms ease-in-out;
+}
+#video { 
+	text-align: center;
+}
+video { 
+	position: static;
+	width: 920px;
+	height: auto;
+	 max-width: 100%;
+}
+nav img { 
+	float: left;
+	width: 7%;
+	transform: translate(0,-20px);
+}
+
+#fontos::first-letter { 
+	font-size: 120%; 
+}
+footer { 
+	background-color: black;
+	height: 100%;
+	width: 100%;
+}
+footer ul { 
+	text-align: center;
+}
+.kepkeret { 
+	box-shadow:0 2px 15px black;
+	width: 50%;
+}
+p::selection { 
+	background-color: black;
+	color: white;
+}
+h1::selection { 
+	background-color: black;
+	color: white;
+}
+h2::selection { 
+	background-color: black;
+	color: white;
+}
+#copy { 
+	font-size: 10px;
+	color: rgb(194, 149, 92);
+	text-align: center;
+	
+}
+ input[type="reset"], input[type="submit"] { 
+	background-color: rgb(135,50,41);
+	color: rgb(226,176,103);
+	border: 3px solid rgb(226,176,103);
+	max-width: 100%;
+	height: auto;
+	font-weight: bold;
+}
+@media print {  
+        p { font-size: 12pt; }
+        video, audio, nav, footer { display: none; }   
+        h1, h2, h3 { page-break-after: avoid; } 
+		
+      }
+
+      @page { margin: 0.5cm; }

@@ -1,0 +1,36 @@
+tr, td { 
+	border: 1px solid gray;
+	padding: 12px;
+	text-align: center;
+}
+
+table { 
+	margin: auto;
+}
+.sor { 
+	width: 200px;
+	background-color: rgb(241,244,255);
+}
+.kissor { 
+	width: 10px;
+	background-color: rgb(241,244,255);
+}
+.negyzet { 
+	border: 2px solid black;
+}
+h1 { 
+	text-align: center;
+	font-weight: normal;
+}
+body {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+#kep { 
+	text-align: center;
+}
+
+@media print {  
+@page { margin: 0.5cm; }
+
+}
