@@ -1,15 +1,15 @@
 <?php
-	$db = new mysqli('127.0.0.1','root','','kartyajatek');
+	$db = new mysqli('127.0.0.1','root','','kartyajatek'); //Ezzel csatlakozol az adatbázishoz. mysqli(szerver név vagy Ip cím,felhasználónév,jelszó (ami nincs),"adatbázis név")
 	if ($db->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
+		die("Connection failed: " . $conn->connect_error); // Ezzel vizsgálód, hogy történt e hiba az adatbázis csatlakozáskor.
 	}
 	
-	if(isset($_POST['regisz_submit'])) { 
-		$errors = array();
-		$true = true;
-		if(empty($_POST['lastname'])) { 
-			$true=false;
-			array_push($errors,"A Vezetéknév név mező üres!");
+	if(isset($_POST['regisz_submit'])) { // itt vizsgálód, hogy elküldték e a regisztációs űrlapot, tehát a name=regisz_submit gombra kantitott-e.
+		$errors = array(); // hiba tömb a hiba üzenetek gyűjtésésre
+		$true = true; // logikai változó ez arra fog szolgálni, hogy üres-e a mező vagy nem
+		if(empty($_POST['lastname'])) {  // ezzel vizsgálód, hogy a megadott mező üres-e ez az az ág akkor fut le ha üres
+			$true=false; // false lesz
+			array_push($errors,"A Vezetéknév név mező üres!"); //ezzel adom hozzá a errors tömbökhöz a hiba üzenetet array_push(tombnev,"Szöveg")
 		}
 		if(empty($_POST['firstname'])) { 
 			$true=false;
@@ -37,24 +37,24 @@
 			array_push($errors,"A jelszó ismét mező üres!!");
 		}
 		
-		if($_POST['passwd']!=$_POST['passwdagin']) { 
+		if($_POST['passwd']!=$_POST['passwdagin']) { // Itt vizsgálód, hogy a kétszer megadott jelszó megegyezik-e
 			$true=false;
 			array_push($errors,"A jelszavak nem engyelőek!");
 		}
-		$vizsgalt_felhasznalonev = $_POST['username'];
-		$sql_vizsgalat = "SELECT * FROM felhasznalok WHERE felhasznalonev='$vizsgalt_felhasznalonev'";		
-		$result = $db->query($sql_vizsgalat);
+		$vizsgalt_felhasznalonev = $_POST['username']; // itt tárolód le a megadott felhasználónevet
+		$sql_vizsgalat = "SELECT * FROM felhasznalok WHERE felhasznalonev='$vizsgalt_felhasznalonev'"; // ezzel a parancsal vizsgálód meg hogy a felhaszálók táblában van-e ilyen felhasználónév		
+		$result = $db->query($sql_vizsgalat); // ez adja vissza a lekérdezés eredményének sorszámát.
 		
 		
 		
-		if ($result->num_rows > 0) {
+		if ($result->num_rows > 0) { // ez akkor fut le, ha nagyobb, mint 0 a sorokszáma tehát van ilyen felhasználónév már
 			$true=false;
 			array_push($errors,"A felhasználónév már létezik! Kérem válasszon másikat!");
 		}	
 		else {
 		
-		if($true) { 
-			$vnev = mysqli_real_escape_string($db,$_POST['lastname']);
+		if($true) { // ez akkor fut le, ha minden mezőt megadott és ha nem létezik ilyen felhasználónév
+			$vnev = mysqli_real_escape_string($db,$_POST['lastname']); // egy változóban tárolom le a lastname mezőben megadott értéket
 			$knev = mysqli_real_escape_string($db,$_POST['firstname']);
 			$email = mysqli_real_escape_string($db,$_POST['email']); 
 			$felhasznalonev = mysqli_real_escape_string($db,$_POST['username']);
@@ -63,9 +63,9 @@
 			$password= md5($password);
 			$jog='vendeg';
 			$sql = "INSERT INTO felhasznalok (vezeteknev,keresztnev,email,felhasznalonev,jelszo,bolt,jogosultsag,pontok) VALUES ('$vnev','$knev','$email','$felhasznalonev','$password','$bolt','$jog',0)";
-			$db->query($sql);
-			session_start();
-			$_SESSION['username'] = $felhasznalonev;
+			$db->query($sql); // a felette lévő sql lekérdezéssel szúrom be az adatbázisba a regisztrált adatokat, ezzel a sorral pedig végrehajtom a lekérdezést
+			session_start(); //munkameneti változó inditás
+			$_SESSION['username'] = $felhasznalonev; // a munkamenti változóban letárolóm
 			echo "<script> alert('Sikeres regisztráció!');window.location='sajatprofil.php' </script>";
 		}
 		
